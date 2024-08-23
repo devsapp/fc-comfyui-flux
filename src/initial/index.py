@@ -2,6 +2,8 @@ import os
 import requests
 
 def download_file(url, save_path):
+    os.makedirs(os.path.dirname(save_path), exist_ok=True)
+
     # 发送 GET 请求
     response = requests.get(url, stream=True)
     response.raise_for_status()  # 检查请求是否成功
