@@ -44,6 +44,7 @@ resources:
       nasConfig: ${vars.nasConfig}
       environmentVariables:
         NAS_DIR: "/mnt/${resources.comfyui.props.functionName}"
+        EXTRA_ARGS: --lowvram
 
   initial:
     component: fc3
@@ -72,7 +73,6 @@ resources:
         - acs:fc:${vars.region}:official:layers/Python310-Aliyun-SDK/versions/1
       environmentVariables:
         NAS_ROOT: "/mnt/${resources.comfyui.props.functionName}"
-        EXTRA_ARGS: --lowvram
         PYTHONPATH: /opt/python
         PATH: /var/fc/lang/python3.10/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin
 
